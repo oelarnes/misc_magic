@@ -5,8 +5,10 @@ card_winrates = {}
 with open('Magic Online Results - Theros.csv') as csvfile:
     results_reader = csv.reader(csvfile)
     for row in results_reader:
+    	print row[2]
         decklist = urlopen(row[2])
         for line in decklist:
+        	print line
             if line == '\n':
                 break
             part = line.split(None, 1)
